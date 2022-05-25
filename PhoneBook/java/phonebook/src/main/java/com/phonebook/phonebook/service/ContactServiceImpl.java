@@ -13,7 +13,7 @@ import java.util.concurrent.ExecutionException;
 @Slf4j
 @AllArgsConstructor
 @Service
-public class ContactServiceImpl implements ContactService{
+public class ContactServiceImpl implements ContactService {
     ContactRepository contactRepository;
 
     @Override

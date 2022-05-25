@@ -8,6 +8,7 @@ import com.google.firebase.cloud.FirestoreClient;
 import org.springframework.beans.factory.BeanCreationException;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import java.io.IOException;
 

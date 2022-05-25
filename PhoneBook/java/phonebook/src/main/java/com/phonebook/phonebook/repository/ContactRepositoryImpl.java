@@ -9,13 +9,12 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.concurrent.ExecutionException;
 
 @Slf4j
 @Repository
 @AllArgsConstructor
-public class ContactRepositoryImpl implements ContactRepository{
+public class ContactRepositoryImpl implements ContactRepository {
 
     private final Firestore firestore;
 
@@ -37,12 +36,12 @@ public class ContactRepositoryImpl implements ContactRepository{
 
     @Override
     public List<Contact> findByField(SearchRequest searchRequest) throws ExecutionException, InterruptedException {
-            CollectionReference userCollection = getCollectionName();
-            Query query = userCollection.whereEqualTo(searchRequest.getField(), searchRequest.getValue());
-            return query.get().get().toObjects(Contact.class);
+        CollectionReference userCollection = getCollectionName();
+        Query query = userCollection.whereEqualTo(searchRequest.getField(), searchRequest.getValue());
+        return query.get().get().toObjects(Contact.class);
     }
 
-    private CollectionReference getCollectionName(){
+    private CollectionReference getCollectionName() {
         return firestore.collection(Contact.class.getSimpleName());
     }
 }
